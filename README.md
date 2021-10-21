@@ -13,7 +13,7 @@
   Figure di atas menunjukan viewership, rating, dan adanya bintang tamu pada setiap episode *The office*. Viewership setiap episode dapat dilihat dengan tingginya pada sumbu-y. Rating dapat dilihat melalui warna dimana warna mendekati merah berarti rating rendah dan semakin hijau berarti semakin tinggi. Ada atau tidaknya terindikasi dengan marker berbentuk bintang.
 
 
-### Project: Visualisasi bencana alam di Jawa Barat
+### Project: Visualisasi bencana alam di Jawa Barat menggunakan Google Data Studio
 #### Deskripsi project:
 + Mengimport 3 data dari opendata Jawa Barat ke dalam Google Data Studio via csv file, yaitu:
   - Angka korban bencana alam di Jawa Barat pada tahun (2019)
