@@ -9,7 +9,6 @@
 
 #### Hasil Visualisasi:
 ![image](https://user-images.githubusercontent.com/80349832/138271826-49dfdc95-c309-4771-940f-93f2482ea0fe.png)
-Figure diatas menunjukan jumlah viewership 
 
 ### Project: Visualisasi bencana alam di Jawa Barat
 #### Deskripsi project:
