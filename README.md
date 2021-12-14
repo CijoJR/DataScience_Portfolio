@@ -6,13 +6,13 @@
 + Menggunakan Pandas untuk mengimport data persetujuan kartu kredit dari UCI Machine Learning Repository berbentuk csv ke dalam bentuk DataFrame.
 + Mengubah dan mengisi missing values pada DataFrame berdasarkan mean.
 + Membelah data menjadi data training dan testing. 
-+ Melakukan exploratory data analisis korelasi antara feature. Kemudian visualisasi pencarian menggunakan Seaborn heatmap. 
++ Melakukan exploratory data analisis korelasi antara feature. Kemudian visualisasi pencarian menggunakan Seaborn heatmap.
 ![image](https://user-images.githubusercontent.com/80349832/146022628-cbd9583d-34cf-478c-b040-d2fb13a7cc51.png)
 + Melakukan scaling pada data dengan min-max scaler pada range 0-1 dengan cara fit ke data training kemudian transform ke seluruh data.
 + Membuat model logistic regression dan melatihnya menggunakan data training yang telah di-scaling.
 + Melakukan evaluasi performa dari model yang dibuat. Model yang dibuat memiliki akurasi sekitar 84% dan confusion matrix sebagai berikut:
 ![image](https://user-images.githubusercontent.com/80349832/146025386-dae389e6-1882-43dd-ba96-bf0a87519bc5.png)
-+ dan classification report sebagai berikut:
+dan classification report sebagai berikut:
 ![image](https://user-images.githubusercontent.com/80349832/146033377-6d6cc52a-7107-4049-9c66-82ac9f946c08.png)
 + Melakukan optimisasi pada model yang telah dibuat dengan cara mencari value hyperparameter yang sesuai menggunakan GridSearchCV. Hyperparameter yang dipilih adalah tol (0.01, 0.001, 0.0001) dan max_iter(100, 150, 200) dengan cross validation sebanyak 5 fold.
 + Setelah optimisasi, model memiliki akurasi sekitar 85.5% menggunakan hyperparameter {'max_iter': 100, 'tol': 0.01}.
