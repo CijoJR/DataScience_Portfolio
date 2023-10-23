@@ -1,9 +1,8 @@
-# Cijo Jidan Riady
-## DataScience Portfolio
+# Cijo Jidan Riady - DataScience Portfolio
 
-### Personal Project: Prediksi persetujuan kartu kredit menggunakan Python
+## Personal Project: Prediksi persetujuan kartu kredit menggunakan Python
 #### Deskripsi project:
-+ Menggunakan Pandas untuk mengimport data persetujuan kartu kredit dari UCI Machine Learning Repository berbentuk csv ke dalam bentuk DataFrame.
++ Menggunakan Pandas untuk mengimport data persetujuan kartu kredit dari UCI Machine Learning Repository  berbentuk csv ke dalam bentuk DataFrame.
 + Mengubah dan mengisi missing values pada DataFrame berdasarkan mean.
 + Membelah data menjadi data training dan testing. 
 + Melakukan exploratory data analisis korelasi antara feature. Kemudian visualisasi pencarian menggunakan Seaborn heatmap.
@@ -20,19 +19,43 @@
 + Melakukan optimisasi pada model yang telah dibuat dengan cara mencari value hyperparameter yang sesuai menggunakan GridSearchCV. Hyperparameter yang dipilih adalah tol (0.01, 0.001, 0.0001) dan max_iter(100, 150, 200) dengan cross validation sebanyak 5 fold.
 + Setelah optimisasi, model memiliki akurasi sekitar 85.5% menggunakan hyperparameter {'max_iter': 100, 'tol': 0.01}.
 
-### Personal Project: Visualisasi rating dan viewership TV series *'The Office'* menggunakan Python
+## Personal Project: Spotify Top Songs 2023 - EDA and Visualizations
+#### Link Kaggle: https://www.kaggle.com/code/cijojidanriady/spotify-data-2023-eda-and-visualizations
 #### Deskripsi project:
-+ Menggunakan Pandas untuk mengimport data csv dari Kaggle ke dalam bentuk DataFrame.
-+ Mengolah data rating episode menjadi 4 kategori dan membagi DataFrame menjadi 2 berdasarkan adanya bintang tamu atau tidak.
-+ Menggunakan Matplotlib untuk membuat visualisasi scatterplot dengan 4 dimensi (episode number, viewership, rating, dan bintang tamu)
++ Menggunakan Pandas untuk mengimport [file csv dari Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) ke dalam bentuk DataFrame.
++ Memeriksa data untuk nilai hilang atau duplikat
++ Melakukan data cleaning dengan mengubah tipe data dan mengisi data kosong
++ Melakukan feature engineering dengan menambahkan kolom jumlah putaran per juta dan kategori artis dengan mengkategorikan jumlah artis menjadi 'solo' dan 'multiple' 
++ Mengolah dan visualisasi data untuk menjawab pertanyaan-pertanyaan seperti:
 
-#### Hasil Visualisasi:
-![image](https://user-images.githubusercontent.com/80349832/138271826-49dfdc95-c309-4771-940f-93f2482ea0fe.png)
+  - Siapa saja artis yang paling didengar pada tahun 2023?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/11ce1f11-f484-40c9-82bf-a4f71e852432)
 
-  Figure di atas menunjukan viewership, rating, dan adanya bintang tamu pada setiap episode *The office*. Viewership setiap episode dapat dilihat dengan tingginya pada sumbu-y. Rating dapat dilihat melalui warna dimana warna mendekati merah berarti rating rendah dan semakin hijau berarti semakin tinggi. Ada atau tidaknya terindikasi dengan marker berbentuk bintang.
+  - Dari artis-artis tersebut, lagu keluaran tahun kapan yang paling didengar?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/7676f279-93ff-44a5-ac16-b3644aa66e36)
 
+  - Lagu-lagu apa saja yang paling didengar dari 5 tahun sebelumnya?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/e33fa5ea-881e-4ae7-a4b8-ad0f96c7d330)
 
-### Personal Project: Visualisasi bencana alam di Jawa Barat menggunakan Google Data Studio
+  - Lagu apa yang lebih banyak jumlah dengar? satu atau lebih artis?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/5ffb517f-5865-4b52-b290-f787aa873e92)
+
+  - Lagu apa saja yang paling didengar berdasarkan jumlah artis?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/d9ea58a6-9ed8-45fc-9602-909866b2201c)
+
+  - Kunci apa saja yang sering dipakai dalam lagu-lagu terpopuler Spotify?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/67efd710-7405-4ebe-a631-4e616e6da5c8)
+
+  - Bagaimana penggunaan kunci mayor dan minor dalam lagu-lagu terpopuler spotify?<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/6f8583f2-b949-43f3-819b-e247fc7139cc)
+
+  - Fitur apa saja yang berkolerasi? <br>
+![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/1ee5a230-f5d8-48db-91f0-b6459e19b992)
+![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a27d938e-7974-481e-bff0-689ad4190797)
+![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a85b490f-80cd-410a-a52b-a8e8db114a06)
+![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/4220773b-b5b9-4e8e-9f5b-966d0e45150d)
+
+## Personal Project: Visualisasi bencana alam di Jawa Barat menggunakan Google Data Studio
 #### Deskripsi project:
 + Mengimport 3 data dari opendata Jawa Barat ke dalam Google Data Studio via csv file, yaitu:
   - Angka korban bencana alam di Jawa Barat pada tahun (2019)
