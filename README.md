@@ -1,31 +1,67 @@
 # Cijo Jidan Riady - DataScience Portfolio
 
 ## Personal Project: Prediksi persetujuan kartu kredit menggunakan Python
+#### Link Kaggle:
+<a>https://www.kaggle.com/code/cijojidanriady/case-study-credit-card-approval-classification/notebook</a>
 #### Deskripsi project:
-+ Menggunakan Pandas untuk mengimport data persetujuan kartu kredit dari UCI Machine Learning Repository  berbentuk csv ke dalam bentuk DataFrame.
-+ Mengubah dan mengisi missing values pada DataFrame berdasarkan mean.
-+ Membelah data menjadi data training dan testing. 
-+ Melakukan exploratory data analisis korelasi antara feature. Kemudian visualisasi pencarian menggunakan Seaborn heatmap.
-
-![image](https://user-images.githubusercontent.com/80349832/146022628-cbd9583d-34cf-478c-b040-d2fb13a7cc51.png)
-+ Melakukan scaling pada data dengan min-max scaler pada range 0-1 dengan cara fit ke data training kemudian transform ke seluruh data.
-+ Membuat model logistic regression dan melatihnya menggunakan data training yang telah di-scaling.
-+ Melakukan evaluasi performa dari model yang dibuat. Model yang dibuat memiliki akurasi sekitar 84% dan confusion matrix sebagai berikut:
-
-![image](https://user-images.githubusercontent.com/80349832/146025386-dae389e6-1882-43dd-ba96-bf0a87519bc5.png)
-+ dan classification report sebagai berikut:
-
-![image](https://user-images.githubusercontent.com/80349832/146033377-6d6cc52a-7107-4049-9c66-82ac9f946c08.png)
-+ Melakukan optimisasi pada model yang telah dibuat dengan cara mencari value hyperparameter yang sesuai menggunakan GridSearchCV. Hyperparameter yang dipilih adalah tol (0.01, 0.001, 0.0001) dan max_iter(100, 150, 200) dengan cross validation sebanyak 5 fold.
-+ Setelah optimisasi, model memiliki akurasi sekitar 85.5% menggunakan hyperparameter {'max_iter': 100, 'tol': 0.01}.
++ Mengimport package python yang akan digunakan dalam project:
+  - NumPy
+  - Pandas
+  - Matplotlib.pyplot
+  - Seaborn
+  - Sklearn
++ Menggunakan Pandas untuk mengimport [file csv dari Kaggle](https://www.kaggle.com/datasets/jorgemacosmartos/crx-uci-ml-repository/) ke dalam bentuk DataFrame (nama fitur tidak diketahui untuk menjaga kerahasiaan data)
++ Memeriksa data untuk nilai hilang, row duplikat, dan unique value setiap row
+  - Tidak ada missing value
+  - Terdapat value berbentuk '?' yang perlu diproses pada beberapa fitur
++ Melakukan data cleaning
+  - Mengubah value '?' menjadi bentuk NumPy NaN
+  - Terdapat missing value pada fitur 0, 1, 3, 4, 5, 6, dan 13<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/42bfd1c9-386d-4771-8857-b07385d5d6e6)
+  - Semua missing value terdapat pada fitur dengan datatype object
+  - Berdasarkan informasi dataset, fitur 1 merupakan nilai numeric continous sehingga perlu diubah menjadi data type yang sesuai
+  - Setelah dicek, fitur 1 memiliki distribusi yang miring ke kanan sehingga missing value perlu diisi dengan median fitur tersebut<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/06948b04-0928-47ae-893f-dcb3353b70cf)
+  - Kemudian fitur dengan tipe data object diisi dengan mode dari fitur masing-masing
++ Preprocessing and splitting data
+  - Target variabel (fitur 15) akan dimap menjadi 1 dan 0
+  - Fitur dengan tipe data objek akan diubah menjadi value numerik menggunakan LabelEncoder dari sklearn
+  - Data dibagi menjadi train dan test set (1/3 digunakan untuk test set)
+  - Data train dan test akan melalui proses scaling menggunakan MinMaxScaler dari sklearn (scaling dilakukan setelah test agar menghindari terjadinya bocornya data)
++ Fit model Logistic Regression dan cek performa model
+  - Model dilatih dengan data yang sudah diproses
+  - Model mendapatkan akurasi sebesar 87.7% dengan data yang belum pernah dilihat
+  - Confusion matrix dari model dapat dilihat sebagai berikut:<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/12f3460a-8a63-4795-95c7-4c9cbda44ab5)
+  - Fitur yang paling digunakan dalam prediksi apakah lamaran kartu kredit akan disetujukan adalah sebagai berikut:<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/cfda6dac-b465-4dc3-b835-455290fbe452)
++ Mencari hyperparameter model yang paling sesuai dengan tuning
+  - Menggunakan GridSearchCV, model mendapatkan skor yang sama dengan parameter optimal: {'C': 1.623776739188721, 'max_iter': 150, 'penalty': 'l2', 'tol': 0.01}<br>
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/ae9d13b0-d4a8-499b-871b-84846b63b284)
+  - Berdasarkan classification report, kedua model memiliki hasil yang sama maka dapat diasumsikan model awal sudah teroptimisasi<br>
+    ![image](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/683d36e1-a55b-4967-bbbf-01851b2be397)
 
 ## Personal Project: Spotify Top Songs 2023 - EDA and Visualizations
-#### Link Kaggle: https://www.kaggle.com/code/cijojidanriady/spotify-data-2023-eda-and-visualizations
+#### Link Kaggle:
+<a>https://www.kaggle.com/code/cijojidanriady/spotify-data-2023-eda-and-visualizations</a>
 #### Deskripsi project:
++ Mengimport package python yang akan digunakan dalam project:
+  - NumPy
+  - Pandas
+  - Matplotlib.pyplot
+  - seaborn
 + Menggunakan Pandas untuk mengimport [file csv dari Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) ke dalam bentuk DataFrame.
 + Memeriksa data untuk nilai hilang atau duplikat
+  - Terdapat nilai hilang dalam fitur 'streams', 'in_deezer_playlists', 'in_shazam_charts', 'key'
+  - Tidak ada row duplikat dari dataset
 + Melakukan data cleaning dengan mengubah tipe data dan mengisi data kosong
-+ Melakukan feature engineering dengan menambahkan kolom jumlah putaran per juta dan kategori artis dengan mengkategorikan jumlah artis menjadi 'solo' dan 'multiple' 
+  - Mengubah tipe data fitur 'streams' dari object menjadi numeric
+  - Nilai 'in_deezer_playlists' dan 'in_shazam_charts' yang hilang diisi dengan 0 karena fitur berupa ranking dan dapat dianggap suatu lagi yang tidak memiliki nilai berarti tidak termasuk dalam ranking tersebut
+  - Nilai 'stream' yang hilang dihapus karena merupakan <1% dari dataset
+  - Nilai 'key' yang hilang diisi dengan '-'
++ Melakukan feature engineering
+  - Menambahkan kolom jumlah putaran per juta
+  - Menambahkan kolom kategori artis dengan mengkategorikan jumlah artis menjadi 'solo' dan 'multiple' 
 + Mengolah dan visualisasi data untuk menjawab pertanyaan-pertanyaan seperti:
 
   - Siapa saja artis yang paling didengar pada tahun 2023?<br>
@@ -50,12 +86,13 @@
     ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/6f8583f2-b949-43f3-819b-e247fc7139cc)
 
   - Fitur apa saja yang berkolerasi? <br>
-![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/1ee5a230-f5d8-48db-91f0-b6459e19b992)
-![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a27d938e-7974-481e-bff0-689ad4190797)
-![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a85b490f-80cd-410a-a52b-a8e8db114a06)
-![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/4220773b-b5b9-4e8e-9f5b-966d0e45150d)
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/1ee5a230-f5d8-48db-91f0-b6459e19b992)
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a27d938e-7974-481e-bff0-689ad4190797)
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/a85b490f-80cd-410a-a52b-a8e8db114a06)
+    ![download](https://github.com/CijoJR/DataScience_Portfolio/assets/80349832/4220773b-b5b9-4e8e-9f5b-966d0e45150d)
 
-## Personal Project: Visualisasi bencana alam di Jawa Barat menggunakan Google Data Studio
+## Project Tugas Kuliah: Visualisasi bencana alam di Jawa Barat menggunakan Google Data Studio
+#### Tugas 
 #### Deskripsi project:
 + Mengimport 3 data dari opendata Jawa Barat ke dalam Google Data Studio via csv file, yaitu:
   - Angka korban bencana alam di Jawa Barat pada tahun (2019)
